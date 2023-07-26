@@ -82,6 +82,7 @@ final class ClientSecretJwt extends AbstractJwtAuth
                 'jti' => $jti,
             ], JSON_THROW_ON_ERROR);
 
+        /** @psalm-suppress InvalidArgument */
         $jws = $this->getJwsBuilder()->create()
             ->withPayload($payload)
             ->addSignature($jwk, ['alg' => 'HS256', 'jti' => $jti])

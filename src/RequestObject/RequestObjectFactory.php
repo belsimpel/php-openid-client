@@ -135,6 +135,7 @@ class RequestObjectFactory
             'kid' => ! $ktyIsOct && $jwk->has('kid') ? $jwk->get('kid') : null,
         ]);
 
+        /** @psalm-suppress InvalidArgument */
         $jws = $this->jwsBuilder->create()
             ->withPayload($payload)
             ->addSignature($jwk, $header)
@@ -180,6 +181,7 @@ class RequestObjectFactory
             'kid' => ! $ktyIsOct && $jwk->has('kid') ? $jwk->get('kid') : null,
         ]);
 
+        /** @psalm-suppress InvalidArgument */
         $jwe = $this->jweBuilder->create()
             ->withPayload($payload)
             ->withSharedProtectedHeader($header)

@@ -48,6 +48,7 @@ namespace Facile\OpenIDClient\Token;
  *     expires_in?: int,
  *     state?: string,
  *     code_verifier?: string,
+ *     id_token?: string,
  * }
  * @psalm-type TokenSetType = array{}&array{code?: string, state?: string, token_type?: string, access_token?: string, id_token?: string, refresh_token?: string, expires_in?: int, code_verifier?: string}
  * @psalm-type TokenSetMixedType = TokenSetAttributesType&array{claims?: TokenSetClaimsType}
